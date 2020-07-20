@@ -8,11 +8,11 @@ const MovieCard = props => {
   const { id } = useParams()
   const [ stars, setStars] = useState([])
 
+  //only update when id changes
   useEffect(() => {
     axios.get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
         setStars(response.data.stars)
-        console.log(stars)
       })
     .catch(err => {console.log(err)})
   }, [id])
