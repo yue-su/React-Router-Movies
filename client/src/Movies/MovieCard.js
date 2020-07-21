@@ -23,7 +23,8 @@ const MovieCard = props => {
       <div className="save-wrapper">
         <div className="movie-card">
         <Details movie={movies[id]} />
-        <Stars stars={stars} />
+          <Stars stars={stars} />
+          <div className="save-button" onClick={() => props.addToSavedList(id)}>Save</div>
         </div>
       </div> 
     )
@@ -51,7 +52,6 @@ const Details = props => {
   const { movie } = props
 
   return(
-    
     <div>
         <h2>{movie.title}</h2>
         <div className='movie-director'>
@@ -61,7 +61,6 @@ const Details = props => {
           Metascore: <strong>{movie.metascore}</strong>
         </div>
       </div>
-    
   )
 }
 
@@ -75,7 +74,6 @@ const Stars = props => {
           {star}
         </div>
       ))}
-      <div className="save-button">Save</div>
     </div>
   )
 }
