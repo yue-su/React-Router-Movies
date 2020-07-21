@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SavedList from './Movies/SavedList';
 import { Route } from 'react-router-dom'
-import MovieList from './Movies/MovieList'
-import Movie from './Movies/Movie'
+//import MovieList from './Movies/MovieList'
+//import Movie from './Movies/Movie'
 import MovieCard from './Movies/MovieCard';
 
 const App = () => {
@@ -24,6 +24,7 @@ const App = () => {
     getMovies();
   }, []);
   
+  //Arr is set to store a updated state, since we can't update saved directly but only by setSaved
   let Arr = [...saved]
 
   const addToSavedList = id => {
